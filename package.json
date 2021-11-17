@@ -1,0 +1,33 @@
+{
+  "name": "hatchways-backend-assessment",
+  "version": "1.0.0",
+  "description": "Backend Assessment Test for Hatchways - November 2021",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "tsc && node ./build/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CaiqueSLima/hatchways-backend-assessment.git"
+  },
+  "keywords": [],
+  "author": "Caíque Souto Lima",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CaiqueSLima/hatchways-backend-assessment/issues"
+  },
+  "homepage": "https://github.com/CaiqueSLima/hatchways-backend-assessment#readme",
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/node": "^16.11.7",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1"
+  }
+}
