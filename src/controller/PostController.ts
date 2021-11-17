@@ -13,13 +13,12 @@ export class PostController {
             const sortBy = (req.query.sortBy as string)?.toLowerCase() || 'id'
             const direction = (req.query.direction as string)?.toLowerCase() || 'asc'
 
-            await postBusiness.getPostLogic(tags, sortBy, direction)
+            const posts = await postBusiness.getPostLogic(tags, sortBy, direction)
 
-            res.end()
+            res.status(200).send({ posts })
 
         } catch (error: any) {
             res.status(error.statusCode).send({ error: error.message })
         }
-
     }
 }

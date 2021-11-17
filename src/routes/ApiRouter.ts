@@ -8,4 +8,4 @@ const postController = new PostController()
 export const apiRouter = Router()
 
 apiRouter.get('/ping', pingController.getPong)
-apiRouter.get('/post', postController.getPosts)
+apiRouter.get('/posts', postController.getPosts)

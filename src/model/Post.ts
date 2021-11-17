@@ -45,7 +45,7 @@ export class Post {
         this.tags = tags
     }
 
-    public static toPostModel(post: any): Post {
+    public static toPostModel(post: PostData): Post {
         return new Post(
             post.id,
             post.author,
