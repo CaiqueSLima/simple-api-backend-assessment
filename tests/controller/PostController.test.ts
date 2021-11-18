@@ -49,4 +49,17 @@ describe('Testing real world scenarios', () => {
             console.log(error)
         }
     })
+
+    test('GET /api/posts?tags=tech&sortBy=likes - must return techSortByLikes', async () => {
+        expect.assertions(2)
+        try {
+            const response = await request(app).get('/api/posts?tags=tech&sortBy=likes')
+
+            expect(response.statusCode).toBe(200)
+            expect(response.body).toEqual(techSortByLikes)
+
+        } catch (error) {
+            console.log(error)
+        }
+    })
 })
