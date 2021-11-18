@@ -1,22 +1,52 @@
-// import { Request, Response } from "express"
-// import { PostBusiness } from "../../src/business/PostBusiness"
-// import { PostDatabase } from "../../src/data/PostDatabase"
-import supertest from "supertest"
+import request from "supertest"
 import app from "../../src/app"
-import { techPosts } from "../mocks/PostsMock"
-
-
-// const postBusiness = new PostBusiness(new PostDatabase())
+import {
+    techPosts,
+    techAndHistoryPosts,
+    techSortByReads,
+    techSortByLikes,
+    techSortByPopularity,
+    techDesc
+} from "../mocks/PostsMock"
 
 describe('Testing real world scenarios', () => {
 
     test('GET /api/posts?tags=tech - must return techPosts', async () => {
-        // expect.assertions(2)
-        const response = await supertest(app).get('/api/posts?tags=tech')
+        expect.assertions(2)
+        try {
+            const response = await request(app).get('/api/posts?tags=tech')
 
-        console.log(response)
+            expect(response.statusCode).toBe(200)
+            expect(response.body).toEqual(techPosts)
 
-        
+        } catch (error) {
+            console.log(error)
+        }
     })
 
+    test('GET /api/posts?tags=tech,history - must return techAndHistoryPosts', async () => {
+        expect.assertions(2)
+        try {
+            const response = await request(app).get('/api/posts?tags=tech,history')
+
+            expect(response.statusCode).toBe(200)
+            expect(response.body).toEqual(techAndHistoryPosts)
+
+        } catch (error) {
+            console.log(error)
+        }
+    })
+
+    // test('GET /api/posts?tags=tech&sortBy=reads - must return techPosts', async () => {
+    //     expect.assertions(2)
+    //     try {
+    //         const response = await request(app).get('/api/posts?tags=tech,history')
+
+    //         expect(response.statusCode).toBe(200)
+    //         expect(response.body).toEqual(techAndHistoryPosts)
+
+    //     } catch (error) {
+    //         console.log(error)
+    //     }
+    // })
 })
