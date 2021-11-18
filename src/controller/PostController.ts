@@ -1,8 +1,9 @@
 import { Request, Response } from "express"
 import { PostBusiness } from "../business/PostBusiness"
+import { PostDatabase } from "../data/PostDatabase"
 
 
-const postBusiness = new PostBusiness()
+const postBusiness = new PostBusiness(new PostDatabase())
 export class PostController {
 
     public async getPosts(req: Request, res: Response): Promise<void> {

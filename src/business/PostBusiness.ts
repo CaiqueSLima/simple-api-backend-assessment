@@ -2,8 +2,12 @@ import { PostDatabase } from "../data/PostDatabase"
 import { CustomError } from "../error/CustomError"
 import { Post } from "../model/Post"
 
-const postDatabase = new PostDatabase()
+
 export class PostBusiness {
+
+    constructor(
+        private postDatabase: PostDatabase
+    ) { }
 
     public async getPostLogic(tags: string | undefined, sortBy: string, direction: string): Promise<Post[]> {
 
@@ -20,7 +24,7 @@ export class PostBusiness {
         }
         
         const tagsArray = tags.split(',')
-        const postsFromSource = await postDatabase.getPostsFromSource(tagsArray, sortBy, direction)
+        const postsFromSource = await this.postDatabase.getPostsFromSource(tagsArray, sortBy, direction)
 
         return postsFromSource
     }
