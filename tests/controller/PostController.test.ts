@@ -88,4 +88,17 @@ describe('Testing real world scenarios', () => {
             console.log(error)
         }
     })
+
+    test('GET /api/posts?tags=hello - must return an empty array', async () => {
+        expect.assertions(2)
+        try {
+            const response = await request(app).get('/api/posts?tags=hello')
+
+            expect(response.statusCode).toBe(200)
+            expect(response.body).toEqual({ posts: [] })
+
+        } catch (error) {
+            console.log(error)
+        }
+    })
 })
