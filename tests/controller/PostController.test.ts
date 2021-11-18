@@ -75,4 +75,17 @@ describe('Testing real world scenarios', () => {
             console.log(error)
         }
     })
+
+    test('GET /api/posts?tags=tech&direction=desc - must return techDesc', async () => {
+        expect.assertions(2)
+        try {
+            const response = await request(app).get('/api/posts?tags=tech&direction=desc')
+
+            expect(response.statusCode).toBe(200)
+            expect(response.body).toEqual(techDesc)
+
+        } catch (error) {
+            console.log(error)
+        }
+    })
 })
