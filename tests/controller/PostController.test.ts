@@ -37,16 +37,16 @@ describe('Testing real world scenarios', () => {
         }
     })
 
-    // test('GET /api/posts?tags=tech&sortBy=reads - must return techPosts', async () => {
-    //     expect.assertions(2)
-    //     try {
-    //         const response = await request(app).get('/api/posts?tags=tech,history')
+    test('GET /api/posts?tags=tech&sortBy=reads - must return techSortByReads', async () => {
+        expect.assertions(2)
+        try {
+            const response = await request(app).get('/api/posts?tags=tech&sortBy=reads')
 
-    //         expect(response.statusCode).toBe(200)
-    //         expect(response.body).toEqual(techAndHistoryPosts)
+            expect(response.statusCode).toBe(200)
+            expect(response.body).toEqual(techSortByReads)
 
-    //     } catch (error) {
-    //         console.log(error)
-    //     }
-    // })
+        } catch (error) {
+            console.log(error)
+        }
+    })
 })
