@@ -58,7 +58,7 @@ npm start
   * Method: GET
   * Path: `/api/posts?tags={tag or tags separated by comma}&sortBy={"id", "reads", "likes" or "popularity"}&direction={"asc" or "desc"}`
   #### At least one tag is mandatory (Error if none is passed)
-  #### "sortBy" and "direction" are opitional (Error if invalid value is passed)
+  #### "sortBy" and "direction" are optional (Error if invalid value is passed)
   * Response: (Empty array if nothing is found with given tags)
   ```
   {
