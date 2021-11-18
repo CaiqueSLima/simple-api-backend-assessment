@@ -29,7 +29,7 @@ export class PostDatabase {
             })
 
             let sortedPosts: PostData[] = []
-            
+
             if (direction === 'asc') {
                 sortedPosts = uniquePosts.sort((a: any, b: any) => (a[sortBy] > b[sortBy]) ? 1 : -1)
             } else {

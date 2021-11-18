@@ -22,7 +22,7 @@ export class PostBusiness {
         if (direction !== 'asc' && direction !== 'desc') {
             throw new CustomError('direction parameter is invalid')
         }
-        
+
         const tagsArray = tags.split(',')
         const postsFromSource = await this.postDatabase.getPostsFromSource(tagsArray, sortBy, direction)
 
