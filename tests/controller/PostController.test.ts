@@ -62,4 +62,17 @@ describe('Testing real world scenarios', () => {
             console.log(error)
         }
     })
+
+    test('GET /api/posts?tags=tech&sortBy=popularity - must return techSortByPopularity', async () => {
+        expect.assertions(2)
+        try {
+            const response = await request(app).get('/api/posts?tags=tech&sortBy=popularity')
+
+            expect(response.statusCode).toBe(200)
+            expect(response.body).toEqual(techSortByPopularity)
+
+        } catch (error) {
+            console.log(error)
+        }
+    })
 })
