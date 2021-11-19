@@ -1,4 +1,4 @@
-# Simples API Backend Assessment
+# Simple API Backend Assessment
 
 ## Install
 
