@@ -1,11 +1,4 @@
-# Caíque's Hatchways Backend Assessment
-
-Following the requirements according to this link: https://storage.googleapis.com/hatchways-app.appspot.com/assessments/data/instructions/b-3/Back-end%20Assessment%20-%20Blog%20Posts-TZW3TH2D4VFVDPKH4D6C.pdf
-
-## Context
-
-I'm a full time student, finishing a web development course, Monday to Friday, from 8AM to 5PM (GMT -3).
-
+# Simples API Backend Assessment
 
 ## Install
 
