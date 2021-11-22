@@ -1,3 +1,4 @@
+import { HashTable } from "../model/HashTable"
 import { Post, PostData } from "../model/Post"
 import { FetchData } from "../services/FetchData"
 
@@ -7,9 +8,21 @@ export class PostDatabase {
 
         const allPosts = await FetchData.getPosts(tags)
 
-        const uniquePosts = allPosts?.filter((post, index, self) => {
-            return index === self.findIndex((p) => (p.id === post.id))
+        const hash: HashTable = {}
+
+        const uniquePosts = allPosts?.filter((post: PostData) => {
+            const key = post.id
+
+            if (key in hash) {
+                return false
+            }
+
+            hash[key] = true
+
+            return true
         })
+
+        console.log(uniquePosts.length)
 
         let sortedPosts: PostData[] = []
 
