@@ -1,6 +1,6 @@
 import { PostBusiness } from "../../src/business/PostBusiness"
 import { PostDatabaseMock } from "../mocks/PostDatabaseMock"
-import { techPosts } from "../mocks/PostsMock"
+import { techPostsToModel } from "../mocks/PostsMock"
 
 const postBusiness = new PostBusiness(new PostDatabaseMock())
 
@@ -43,7 +43,7 @@ describe('Testing success case', () => {
         expect.assertions(1)
         try {
             const result = await postBusiness.getPostLogic('test', 'id', 'asc')
-            expect(result).toEqual(techPosts)
+            expect(result).toEqual(techPostsToModel)
         } catch (error) {
             console.log(error)
         }

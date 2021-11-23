@@ -1,3 +1,5 @@
+import { Post, PostData } from "../../src/model/Post"
+
 export const techPosts = {
     "posts": [
         {
@@ -348,3 +350,5 @@ export const techPosts = {
         }
     ]
 }
+
+export const techPostsToModel = techPosts.posts.map((post: PostData) => Post.toPostModel(post))

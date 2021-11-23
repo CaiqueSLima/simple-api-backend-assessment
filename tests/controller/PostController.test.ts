@@ -40,7 +40,8 @@ describe('Testing real world scenarios', () => {
 
             expect(response.statusCode).toBe(200)
             expect(response.body.posts[0].reads).toBeLessThanOrEqual(response.body.posts[1].reads)
-            expect(response.body.posts[response.body.posts.length - 2].reads).toBeLessThanOrEqual(response.body.posts[response.body.posts.length - 1].reads)
+            expect(response.body.posts[response.body.posts.length - 2].reads)
+                .toBeLessThanOrEqual(response.body.posts[response.body.posts.length - 1].reads)
 
         } catch (error) {
             console.log(error)
@@ -54,7 +55,8 @@ describe('Testing real world scenarios', () => {
 
             expect(response.statusCode).toBe(200)
             expect(response.body.posts[0].likes).toBeLessThanOrEqual(response.body.posts[1].likes)
-            expect(response.body.posts[response.body.posts.length - 2].likes).toBeLessThanOrEqual(response.body.posts[response.body.posts.length - 1].likes)
+            expect(response.body.posts[response.body.posts.length - 2].likes)
+                .toBeLessThanOrEqual(response.body.posts[response.body.posts.length - 1].likes)
 
         } catch (error) {
             console.log(error)
@@ -68,7 +70,8 @@ describe('Testing real world scenarios', () => {
 
             expect(response.statusCode).toBe(200)
             expect(response.body.posts[0].popularity).toBeLessThanOrEqual(response.body.posts[1].popularity)
-            expect(response.body.posts[response.body.posts.length - 2].popularity).toBeLessThanOrEqual(response.body.posts[response.body.posts.length - 1].popularity)
+            expect(response.body.posts[response.body.posts.length - 2].popularity)
+                .toBeLessThanOrEqual(response.body.posts[response.body.posts.length - 1].popularity)
 
         } catch (error) {
             console.log(error)
@@ -82,7 +85,8 @@ describe('Testing real world scenarios', () => {
 
             expect(response.statusCode).toBe(200)
             expect(response.body.posts[0].id).toBeGreaterThanOrEqual(response.body.posts[1].id)
-            expect(response.body.posts[response.body.posts.length - 2].id).toBeGreaterThanOrEqual(response.body.posts[response.body.posts.length - 1].id)
+            expect(response.body.posts[response.body.posts.length - 2].id)
+                .toBeGreaterThanOrEqual(response.body.posts[response.body.posts.length - 1].id)
 
         } catch (error) {
             console.log(error)

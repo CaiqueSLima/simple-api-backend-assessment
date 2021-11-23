@@ -22,15 +22,11 @@ export class PostDatabase {
             return true
         })
 
-        console.log(uniquePosts.length)
+        const directionMultiplier: number = direction === 'asc' ? 1 : -1
 
-        let sortedPosts: PostData[] = []
-
-        if (direction === 'asc') {
-            sortedPosts = uniquePosts.sort((a: any, b: any) => (a[sortBy] > b[sortBy]) ? 1 : -1)
-        } else {
-            sortedPosts = uniquePosts.sort((a: any, b: any) => (a[sortBy] < b[sortBy]) ? 1 : -1)
-        }
+        const sortedPosts: PostData[] = uniquePosts.sort((a: any, b: any) => {
+            return directionMultiplier * (a[sortBy] - b[sortBy])
+        })
 
         const resultPosts = sortedPosts.map(post => Post.toPostModel(post))
 
